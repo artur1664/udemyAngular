@@ -1,0 +1,12 @@
+<p>first-component works!</p>
+<!--<p>observable counter {{counter}}</p>-->
+<p>counter {{counter2}}</p>
+<div *ngIf="message">
+  <p>message text {{message.text}}</p>
+  <p>message level {{message.options.level}}</p>
+  <p>message required {{message.options.required}}</p>
+</div>
+
+<button (click)="increment()">Increment</button>
+<button (click)="setRequired()">Set required</button>
+<button (click)="update()">Update</button>
