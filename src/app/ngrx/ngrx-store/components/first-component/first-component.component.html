@@ -1,0 +1,6 @@
+<p>first-component works!</p>
+<p>User uuid {{(appUser$ | async).userUuid}}</p>
+<p>User random name {{(appUser$ | async).userNickName}}</p>
+<p>User login {{(appUser$ | async).userLogin}}</p>
+
+<button (click)="randomUser()">generate random user data</button>
