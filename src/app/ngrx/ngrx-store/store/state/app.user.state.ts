@@ -6,6 +6,11 @@ export interface AppUserState {
 }
 
 export const initialUserState: AppUserState = {
-  appUser: {userLogin: 'default', userNickName: 'default', userUuid: 'default'},
+  appUser: {
+    userLogin: 'default',
+    userNickName: 'default',
+    userUuid: 'default',
+    authorities: [{authority: 'ROLE_USER', deprecated: false}]
+  },
   isActive: false
 };

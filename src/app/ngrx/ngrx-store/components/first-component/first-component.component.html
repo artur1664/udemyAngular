@@ -2,5 +2,11 @@
 <p>User uuid {{(appUser$ | async).userUuid}}</p>
 <p>User random name {{(appUser$ | async).userNickName}}</p>
 <p>User login {{(appUser$ | async).userLogin}}</p>
-
+<p>user authorities</p>
+<ul>
+  <li *ngFor="let auth of (appUser$ | async).authorities">
+    <p>authority: {{auth.authority}} <span>is deprecated: {{auth.deprecated}}</span></p>
+  </li>
+</ul>
 <button (click)="randomUser()">generate random user data</button>
+<button (click)="setUserData()">set new user data</button>

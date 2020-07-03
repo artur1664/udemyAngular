@@ -1,8 +1,9 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {select, Store} from '@ngrx/store';
-import {GetRandomUser} from '../../store/actions/app.user.actions';
+import {GetRandomUser, SetUserData} from '../../store/actions/app.user.actions';
 import {AppState} from '../../store/state/app.state';
 import {selectAppUser} from '../../store/selectors/app.user.selector';
+import {AppUser} from '../../model/app-user';
 
 @Component({
   selector: 'app-first-component',
@@ -22,6 +23,15 @@ export class FirstComponentComponent implements OnInit, OnDestroy {
 
   randomUser() {
     this.store.dispatch(new GetRandomUser());
+  }
+
+  setUserData() {
+    const newAppUser = new AppUser();
+    newAppUser.userLogin = 'new login';
+    newAppUser.userNickName = 'new nick';
+    newAppUser.userUuid = 'test uuid';
+    newAppUser.authorities = [{deprecated: true, authority: 'ROLE_ADMIN'}];
+    this.store.dispatch(new SetUserData(newAppUser));
   }
 
   ngOnDestroy(): void {
