@@ -1,0 +1,16 @@
+<p>display-firebase-data works!</p>
+<ul>
+  <li *ngFor="let field of fields">{{field.field1 + ' ' + field.field2}}</li>
+</ul>
+
+<p>async pipe version</p>
+<ul>
+  <li *ngFor="let field of fields$ | async">{{field.field1 + ' ' + field.field2}}</li>
+</ul>
+
+<p>async pipe version with json pipe</p>
+<ul>
+  <li *ngFor="let field of fields$ | async">{{field | json}}</li>
+</ul>
+
+<button (click)="addNew()">Add new random</button>
